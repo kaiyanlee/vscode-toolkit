@@ -1,0 +1,72 @@
+{
+  "name": "Toolkit",
+  "displayName": "vscode-toolkit",
+  "description": "Miscellaneous extension scripts to help improve my developer productivity in Visual Studio Code.",
+  "publisher": "kaiyanlee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaiyanlee/vscode-toolkit"
+  },
+  "version": "0.0.0",
+  "icon": "assets/logo.png",
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:vscode-toolkit.insert-sequence",
+    "onCommand:vscode-toolkit.insert-date-time",
+    "onCommand:vscode-toolkit.encode-base64",
+    "onCommand:vscode-toolkit.decode-base64"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscode-toolkit.insert-sequence",
+        "title": "Insert Sequence"
+      },
+      {
+        "command": "vscode-toolkit.insert-date-time",
+        "title": "Insert Date and Time"
+      },
+      {
+        "command": "vscode-toolkit.encode-base64",
+        "title": "Encode Base64"
+      },
+      {
+        "command": "vscode-toolkit.decode-base64",
+        "title": "Decode Base64"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.63.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "@vscode/test-electron": "^2.0.3",
+    "eslint": "^8.6.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.1.3",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.4",
+    "vsce": "^2.6.7",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
