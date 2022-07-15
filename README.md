@@ -1,4 +1,4 @@
-# Toolkit
+# VSCode - Toolkit
 
 <p><img width="100%" src="https://raw.githubusercontent.com/kaiyanlee/vscode-toolkit/master/assets/banner.png"></p>
 
